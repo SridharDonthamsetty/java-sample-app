@@ -23,23 +23,23 @@ pipeline {
                     sh "mvn test"
             }
         }
-        stage('Sonarqube Analysis') {
-            environment {
-              def scannerHome = tool 'SonarQubeScanner'
-            }
-            steps {  
-                withSonarQubeEnv('sonarserver') {
-                    sh "/opt/sonar/bin/sonar-scanner"
-                }
-                sleep time: 30000, unit: 'MILLISECONDS'
-                script {
-                        def qg = waitForQualityGate()
-                        if (qg.status != 'OK') {
-                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                        }
-                }
-            }
-        }
+//         stage('Sonarqube Analysis') {
+//             environment {
+//               def scannerHome = tool 'SonarQubeScanner'
+//             }
+//             steps {  
+//                 withSonarQubeEnv('sonarserver') {
+//                     sh "/opt/sonar/bin/sonar-scanner"
+//                 }
+//                 sleep time: 30000, unit: 'MILLISECONDS'
+//                 script {
+//                         def qg = waitForQualityGate()
+//                         if (qg.status != 'OK') {
+//                             error "Pipeline aborted due to quality gate failure: ${qg.status}"
+//                         }
+//                 }
+//             }
+//         }
         stage("Upload Artifacts"){
             steps{
                 rtUpload (
