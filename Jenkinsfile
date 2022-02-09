@@ -56,20 +56,20 @@ pipeline {
                     
             }
         }            
-        stage("Deploy - DEV"){
-            steps{
-                echo "Running Deployment on Dev"
-            }
-        }  
-        stage("Deploy - UAT"){
-            steps{
-                echo "Running Deployment on UAT"
-            }
-        }
-        stage("Deploy - PRD"){
-            steps{
-                echo "Running Deployment on PRD"
-            }
-        }
+//         stage("Deploy - DEV"){
+//             steps{
+//                 echo "Running Deployment on Dev"
+//             }
+//         }  
+//         stage("Deploy - UAT"){
+//             steps{
+//                 echo "Running Deployment on UAT"
+//             }
+//         }
+//         stage("Deploy - PRD"){
+//             steps{
+//                 echo "Running Deployment on PRD"
+//             }
+//         }
     }
 }
